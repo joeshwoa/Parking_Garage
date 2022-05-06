@@ -6,6 +6,7 @@ public class Slots {
     private static int numFreePlaces;
     private double maxWidth;
     private double maxDepth;
+    //Initialize the Garage structure (the places of the garage)
     private static ArrayList<Slot> places = new ArrayList<Slot>() {
         {
             add(new Slot(20, 40));
@@ -36,6 +37,7 @@ public class Slots {
     public ArrayList<Slot> GetAvailableSlots(){
         ArrayList<Slot> available = new ArrayList<Slot>();
         for(int i = 0; i < places.size(); i++){
+            //If the place is available add it to the available array.
             if(places.get(i).IfAvail()){
                 available.add(places.get(i));
             }
