@@ -11,18 +11,18 @@ public class Slots {
     //Initialize the Garage structure (the places of the garage)
     private static ArrayList<Slot> places = new ArrayList<Slot>() {
         {
-            add(new Slot(1.1, 2.7));
-            add(new Slot(1.5, 3));
-            add(new Slot(1.6, 2.9));
-            add(new Slot(1.1, 2.7));
-            add(new Slot(1.4, 3.2));
-            add(new Slot(1.7, 4));
-            add(new Slot(1.5, 3));
-            add(new Slot(1.7, 4));
-            add(new Slot(1.6, 2.9));
-            add(new Slot(1.4, 3.2));
+            add(new Slot(1.1, 2.7, "1A"));
+            add(new Slot(1.5, 3, "1B"));
+            add(new Slot(1.6, 2.9, "1C"));
+            add(new Slot(1.1, 2.7, "1D"));
+            add(new Slot(1.4, 3.2, "1E"));
+            add(new Slot(1.7, 4, "1F"));
+            add(new Slot(1.5, 3, "1J"));
+            add(new Slot(1.7, 4, "1H"));
+            add(new Slot(1.6, 2.9, "1I"));
+            add(new Slot(1.4, 3.2, "1G"));
         }
-    };;
+    };
 
     public Slots(){
         //the min width is 1 meter and max width is 1.7 meters

@@ -6,10 +6,11 @@ public class Slot{
     private String SlotId = "1A";
     private boolean Available;
 
-    public Slot(double w, double d){
+    public Slot(double w, double d, String Id){
         width = w;
         depth = d;
         Available = true;
+        SlotId = Id;
     }
 
     public double GetWidth(){
