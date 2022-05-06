@@ -25,6 +25,8 @@
 - numFreePlaces : int
 - maxWid : double
 - maxDep : double
+- minWid : double
+- minDep : double
 - palces : Slot [ ]
 --
 + ParkIn (double, double) : String
