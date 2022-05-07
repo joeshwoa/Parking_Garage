@@ -11,7 +11,8 @@ public class Slots {
     //Initialize the Garage structure (the places of the garage)
     private static ArrayList<Slot> places = new ArrayList<Slot>() {
         {
-            add(new Slot(1.1, 2.7, "1A"));
+            //Primary Data to test
+            /* add(new Slot(1.1, 2.7, "1A"));
             add(new Slot(1.5, 3, "1B"));
             add(new Slot(1.6, 2.9, "1C"));
             add(new Slot(1.1, 2.7, "1D"));
@@ -20,7 +21,7 @@ public class Slots {
             add(new Slot(1.5, 3, "1J"));
             add(new Slot(1.7, 4, "1H"));
             add(new Slot(1.6, 2.9, "1I"));
-            add(new Slot(1.4, 3.2, "1G"));
+            add(new Slot(1.4, 3.2, "1G")); */
         }
     };
 
@@ -31,6 +32,10 @@ public class Slots {
         //the min depth is 2.7 meters and max depth is 4 meters
         minDepth = 2.7;
         maxDepth = 4;
+    }
+
+    public void SetSlotsDetails(double w, double d, String Id){
+        places.add(new Slot(w, d, Id));
     }
 
     //TODO
