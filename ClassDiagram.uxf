@@ -32,7 +32,7 @@
 + ParkIn (double, double) : String
 + FreeSlot (String) : void
 + GetAvailSlots () : Slot [ ]
-+SetSlotsDetails():void
++SetSlotsDetails(width : double, depth : double, String Id):void
 
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>60</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
 --
