@@ -38,11 +38,23 @@ public class Slots {
         places.add(new Slot(w, d, Id));
     }
 
-    //TODO
-    public String Park_in(){
-        
+    //It returns the first most suitable place to park-in
+    public String Park_in(double car_width, double car_depth){
+        String suitableId = "";
+        double min_suitable_width = 1000, min_suitable_depth = 1000;
+        for(int i = 0; i < places.size(); ++i){
+            //Check if the place dimensions greater or equal to the car dimensions. 
+            if(places.get(i).GetWidth() >= car_width && places.get(i).GetDepth() >= car_depth){
+                //to record the minimum place dimensions wich is the suitable place for this car.
+                if(places.get(i).GetWidth() < min_suitable_width && places.get(i).GetDepth() < min_suitable_depth){
+                    min_suitable_width = places.get(i).GetWidth();
+                    min_suitable_depth = places.get(i).GetDepth();
+                    suitableId = places.get(i).GetID();
+                }
+            }
+        }
         //return PlaceID
-        return "1A";
+        return suitableId;
     }
 
     public ArrayList<Slot> GetAvailableSlots(){
@@ -54,5 +66,9 @@ public class Slots {
             }
         }
         return available;
+    }
+
+    public void FreeSlot (String Id){
+        //Next Phase
     }
 }
