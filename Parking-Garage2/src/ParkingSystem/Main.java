@@ -52,7 +52,7 @@ public class Main {
                     } else if (choice_fun == 3) {
                         choice = 1;
                         break;
-                    } else if (choice == 4) {
+                    } else if (choice_fun == 4) {
                         choice = 3;
                         break;
                     } else {
@@ -61,7 +61,7 @@ public class Main {
                     }
                 }
             } else if (choice == 3) {
-                break;
+                return;
             } else {
                 System.out.println("Invaild choice");
                 choice = s.nextInt();
