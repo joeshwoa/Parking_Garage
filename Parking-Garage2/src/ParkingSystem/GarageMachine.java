@@ -21,6 +21,7 @@ public class GarageMachine {
         w=s.nextDouble();
         System.out.println("Enter depth");
         d=s.nextDouble();
+        
         String sid=control.SentInfo(m,cid,y,w,d);
         if(sid =="No"){
             System.out.println("Sorry No Avaliable Slot");

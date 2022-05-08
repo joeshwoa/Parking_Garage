@@ -41,9 +41,11 @@ public class ScreenController {
     public void EnterSlotsDetails() {
         s.clear();
         int num_of_slots;
-        System.out.println("Enter Number of S;ots");
+        //Take from the manager the number of slots in the garage
+        System.out.println("Enter Number of Slots");
         Scanner scan = new Scanner(System.in);
         num_of_slots= scan.nextInt();
+        //Take the Dimensions of each Slot
         for(int i=0;i<num_of_slots;i++){
             double width, depth;
             String id;

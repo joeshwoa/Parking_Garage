@@ -12,6 +12,8 @@ public class Slot{
         Available = true;
         SlotId = Id;
     }
+
+    //Flip the bool Available if true it will be false and vice versa
     public void SetAval(){
         Available ^= true;
     }

@@ -54,10 +54,11 @@ public class Slots {
                 }
             }
         }
-        if (suitableId != "No") {
 
-            for(int i=0;i<places.size();i++){
-                if(places.get(i).GetID()==suitableId){
+        //Mark the Selected Slot as unavailable.
+        if (suitableId != "No") {
+            for(int i = 0; i<places.size(); i++){
+                if(places.get(i).GetID() == suitableId){
                     places.get(i).SetAval();
                     break;
                 }
