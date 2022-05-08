@@ -1,12 +1,12 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>50</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>1: GarageMachine
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>1: GarageMachine
 --
 
 --
-+ EnterInfoButton (String, String, int, double, double) : void
-+ LeaveButton (String) : void
-+ pay (int) : void
++ EnterInfoButton () : void
++ LeaveButton () : void
+- pay (int) : void
 + ReturnChange (int) : void
-+ ReturnMoney (int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>930</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>7: VehicleCard
++ ReturnMoney (int,String) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>7: VehicleCard
 --
 - model : String
 - carNum : String
@@ -18,9 +18,9 @@
 - timeOut : DateTimeFormatter
 - parkCost : int
 --
-+ CreateForm (String, String, int, double, double, String) : String
++ CreateForm (String, String, int, double, double, String) : void
 + Parkout () : DateTimeFormatter
-+ DesForm () : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>5: Slots
++ DesForm (String) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>5: Slots
 --
 - numFreePlaces : int
 - maxWid : double
@@ -34,14 +34,14 @@
 + GetAvailSlots () : Slot [ ]
 +SetSlotsDetails(width : double, depth : double, String i):void
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
 --
 - money : int
 - parkCost : int
 --
 + SentInfo (String, String, int, double, double) : String
 + Leave (int) : int
-+ check (int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1370</x><y>330</y><w>350</w><h>260</h></coordinates><panel_attributes>8: ParkingMang
++ check (int,int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>330</y><w>350</w><h>260</h></coordinates><panel_attributes>8: ParkingMang
 --
 - timeIn : DateTimeFormatter
 - timeOut : DateTimeFormatter
@@ -58,7 +58,7 @@
 + RemoveCar(DateTimeFormatter) : void
 + AddIncome (DateTimeFormatter) : void
 + GetIncome (DateTimeFormatter) : long
-+ GetNumOfVehicle (DateTimeFormatter) : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
++ GetNumOfVehicle (DateTimeFormatter) : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>330</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
 --
 - width : double
 - depth : double
@@ -69,9 +69,9 @@
 + GetDep () :  double
 + GetId () : String
 + IfAvail () : boll
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>434</y><w>30</w><h>30</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>434</y><w>30</w><h>30</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1370</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
+m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
 --
 
 --
@@ -79,7 +79,7 @@ m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes
 + ShowNumOfVehicle (DateTimeFormatter) : int
 + ShowAvalSlots () : Slot [ ]
 + ShowMassage () : void
-+EnterSlotsDetails():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>930</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>3: MangerScreen
++EnterSlotsDetails():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>3: MangerScreen
 --
 
 --
@@ -87,14 +87,14 @@ m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes
 + ShowIncomeButton (DateTimeFormatter) :void
 + ShowNumOfVehicleButton(DateTimeFormatter) : void
 + ShowAvalSlotsButton () : void
-+EnterSlotsDetailsButton():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>454</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
++EnterSlotsDetailsButton():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>454</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=*</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1270</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=*</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1270</x><y>440</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>440</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=*
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>460</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>460</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element></diagram>
