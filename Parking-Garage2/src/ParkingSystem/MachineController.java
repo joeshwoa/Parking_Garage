@@ -1,4 +1,5 @@
 package ParkingSystem;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -6,17 +7,18 @@ public class MachineController {
     //private  String m,cid;
     //private  int y;
     //private  double w,d;
-    private  Slots s = new Slots() ;
+    private Slots s = new Slots();
+
     //private  GarageMachine gm = new GarageMachine();
     // Slots s = new Slots ();
     // VehicleCard vc = new VehicleCard ();
     // ParkingMang pm = new ParkingMang();
-    MachineController(){
+    MachineController() {
 
     }
-    public String SentInfo(String model,String carId,int mYear,double width,double depth)
-    {
-        String sid =s.Park_in (width,depth);
+
+    public String SentInfo(String model, String carId, int mYear, double width, double depth) {
+        String sid = s.Park_in(width, depth);
         return sid;//sid
     }
     /*public int Leave (String soltId)

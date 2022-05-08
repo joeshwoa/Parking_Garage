@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScreenController {
-    private Slots s =new Slots();
-    ScreenController(){}
+    private Slots s = new Slots();
+
+    ScreenController() {
+    }
+
     public long showIncome() {
         long income = 0;
 
@@ -31,8 +34,8 @@ public class ScreenController {
     ;
 
     public ArrayList<Slot> showAvalSlots() {
-       ArrayList<Slot>AvlSlots;
-       AvlSlots = s.GetAvailableSlots();
+        ArrayList<Slot> AvlSlots;
+        AvlSlots = s.GetAvailableSlots();
 
         return AvlSlots;
 
@@ -44,16 +47,16 @@ public class ScreenController {
         //Take from the manager the number of slots in the garage
         System.out.println("Enter Number of Slots");
         Scanner scan = new Scanner(System.in);
-        num_of_slots= scan.nextInt();
+        num_of_slots = scan.nextInt();
         //Take the Dimensions of each Slot
-        for(int i=0;i<num_of_slots;i++){
+        for (int i = 0; i < num_of_slots; i++) {
             double width, depth;
             String id;
             System.out.println("Enter Width , Depth and slot ID");
-            width=scan.nextDouble();
-            depth =scan.nextDouble();
+            width = scan.nextDouble();
+            depth = scan.nextDouble();
             id = scan.nextLine();
-            s.SetSlotsDetails(width,depth,id);
+            s.SetSlotsDetails(width, depth, id);
         }
     }
 

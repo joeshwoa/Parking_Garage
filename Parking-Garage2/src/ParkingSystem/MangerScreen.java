@@ -9,7 +9,8 @@ public class MangerScreen {
      *
      */
     ScreenController s = new ScreenController();
-    MangerScreen(){
+
+    MangerScreen() {
 
     }
 
@@ -31,12 +32,17 @@ public class MangerScreen {
     public void showAvalSlotsButton() {
         ArrayList<Slot> Aval = s.showAvalSlots();
 
-        for (int i=0;i< Aval.size();i++){
+        for (int i = 0; i < Aval.size(); i++) {
             System.out.println(Aval.get(i).GetID());
         }
 
+        if (Aval.size() == 0) {
+            System.out.println("No Avaliable Slots");
+        }
+
     }
-    public void  EnterSlotsDetailsButton(){
+
+    public void EnterSlotsDetailsButton() {
         s.EnterSlotsDetails();
     }
 }
