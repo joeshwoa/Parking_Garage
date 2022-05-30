@@ -17,8 +17,8 @@ public class MachineController {
 
     }
 
-    public String SentInfo(String model, String carId, int mYear, double width, double depth) {
-        String sid = s.Park_in(width, depth);
+    public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
+        String sid = s.parkIn(width, depth, method);
         return sid;//sid
     }
     /*public int Leave (String soltId)

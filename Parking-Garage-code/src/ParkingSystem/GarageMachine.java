@@ -9,9 +9,24 @@ public class GarageMachine {
     public void EnterInfoButton() {
         s = new Scanner(System.in);
         System.out.println("Enter model, carId, mYear, width and depth");
-        String m, cid;
+        String m, cid, pmethod;
         int y;
         double w, d;
+        System.out.println("Enter the parking method:");
+        System.out.println("First come first served enter FC || Best fit Method enter BF: ");
+        pmethod = s.nextLine();
+
+        ParkingMethod method;
+        if(pmethod.equals("FC")){
+            method = new FirstComeMethod();
+        }else if(pmethod.equals("BF")){
+            method = new BestFitMethod();
+        }else{
+            System.out.println("Invalid input.");
+            System.out.println("Will use the default method which is Best fit Method.");
+            method = new BestFitMethod();
+        }
+
         System.out.println("Enter model");
         m = s.nextLine();
         System.out.println("Enter carId");
@@ -23,7 +38,7 @@ public class GarageMachine {
         System.out.println("Enter depth");
         d = s.nextDouble();
 
-        String sid = control.SentInfo(m, cid, y, w, d);
+        String sid = control.sentInfo(m, cid, y, w, d, method);
         if (sid == "No") {
             System.out.println("Sorry No Avaliable Slot");
         } else {
