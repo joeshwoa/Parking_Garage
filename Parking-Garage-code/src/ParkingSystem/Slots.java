@@ -32,11 +32,11 @@ public class Slots {
         /**/
     }
 
-    public void clear() {
+    public void clearPlaces() {
         places.clear();
     }
 
-    public void SetSlotsDetails(double w, double d, String Id) {
+    public void setSlotsDetails(double w, double d, String Id) {
         //validate the width and depth sizes
         if(w > maxWidth || w < minWidth){
             System.out.println("Invalid width");
@@ -61,11 +61,15 @@ public class Slots {
 
             }
         }
-
         return available;
     }
 
-    public void FreeSlot(String Id) {
-        //Next Phase
+    public void freeSlot(String Id) {
+        for (int i = 0; i < places.size(); i++) {
+            //search the place with the given id and toggle th availability
+            if ((places.get(i).GetID()).equals(Id)) {
+                places.get(i).SetAval();
+            }
+        }
     }
 }

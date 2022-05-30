@@ -19,30 +19,23 @@ public class ScreenController {
         return income;
     }
 
-    ;
-
     public int showNumOfVehicle() {
         int num = 0;
         return num;
     }
 
-    ;
-
     public void showMassage() {
     }
-
-    ;
 
     public ArrayList<Slot> showAvalSlots() {
         ArrayList<Slot> AvlSlots;
         AvlSlots = s.getAvailableSlots();
 
         return AvlSlots;
-
     }
 
     public void enterSlotsDetails() {
-        s.clear();
+        s.clearPlaces();
         int num_of_slots;
         //Take from the manager the number of slots in the garage
         System.out.println("Enter Number of Slots");
@@ -56,11 +49,9 @@ public class ScreenController {
             width = scan.nextDouble();
             depth = scan.nextDouble();
             id = scan.nextLine();
-            s.SetSlotsDetails(width, depth, id);
+            s.setSlotsDetails(width, depth, id);
         }
     }
-
-
 }
     
 
