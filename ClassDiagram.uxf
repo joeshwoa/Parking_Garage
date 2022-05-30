@@ -115,7 +115,7 @@ m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additi
 
 --
 
-+park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>860</y><w>260</w><h>120</h></coordinates><panel_attributes>11: FirstComeMethod
++park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>860</y><w>260</w><h>120</h></coordinates><panel_attributes>11: BestFitMethod
 --
 
 --
