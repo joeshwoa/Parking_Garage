@@ -6,7 +6,7 @@ public class GarageMachine {
     private MachineController control = new MachineController();
     public Scanner s;
 
-    public void EnterInfoButton() {
+    public void enterInfoButton() {
         s = new Scanner(System.in);
         System.out.println("Enter model, carId, mYear, width and depth");
         String m, cid, pmethod;

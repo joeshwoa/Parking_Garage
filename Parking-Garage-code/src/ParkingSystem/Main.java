@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("3. Exit");
                     choice_fun = s.nextInt();
                     if (choice_fun == 1) {
-                        garage.EnterInfoButton();
+                        garage.enterInfoButton();
                     } else if (choice_fun == 2) {
                         choice = 2;
                         break;
@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("4. Exit");
                     choice_fun = s.nextInt();
                     if (choice_fun == 1) {
-                        mange_screen.EnterSlotsDetailsButton();
+                        mange_screen.enterSlotsDetailsButton();
                     } else if (choice_fun == 2) {
                         mange_screen.showAvalSlotsButton();
                     } else if (choice_fun == 3) {

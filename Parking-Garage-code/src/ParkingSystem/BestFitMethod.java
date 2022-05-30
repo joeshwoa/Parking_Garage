@@ -9,7 +9,7 @@ public class BestFitMethod implements ParkingMethod {
         String suitableId = "No";
         double min_suitable_width = 1000, min_suitable_depth = 1000;
         //To search in the available slots only
-        ArrayList<Slot> places = slots.GetAvailableSlots();
+        ArrayList<Slot> places = slots.getAvailableSlots();
         for (int i = 0; i < places.size(); ++i) {
             //Check if the place dimensions greater or equal to the car dimensions.
             if (places.get(i).GetWidth() >= car_width && places.get(i).GetDepth() >= car_depth) {

@@ -35,13 +35,13 @@ public class ScreenController {
 
     public ArrayList<Slot> showAvalSlots() {
         ArrayList<Slot> AvlSlots;
-        AvlSlots = s.GetAvailableSlots();
+        AvlSlots = s.getAvailableSlots();
 
         return AvlSlots;
 
     }
 
-    public void EnterSlotsDetails() {
+    public void enterSlotsDetails() {
         s.clear();
         int num_of_slots;
         //Take from the manager the number of slots in the garage

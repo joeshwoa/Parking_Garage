@@ -4,17 +4,13 @@ package ParkingSystem;
 import java.util.ArrayList;
 
 public class MangerScreen {
-
-    /**
-     *
-     */
     ScreenController s = new ScreenController();
 
     MangerScreen() {
 
     }
 
-    public void showMassagePupup() {
+    public void showMessagePopUp() {
     }
 
     public void showIncomeButton(/*data time formatter*/) {
@@ -42,7 +38,7 @@ public class MangerScreen {
 
     }
 
-    public void EnterSlotsDetailsButton() {
-        s.EnterSlotsDetails();
+    public void enterSlotsDetailsButton() {
+        s.enterSlotsDetails();
     }
 }

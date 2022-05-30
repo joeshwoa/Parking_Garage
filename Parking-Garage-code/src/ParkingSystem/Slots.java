@@ -11,7 +11,7 @@ public class Slots {
     //Initialize the Garage structure (the places of the garage)
     private static ArrayList<Slot> places = new ArrayList<Slot>() {{
         add(new Slot(1.1, 2.7, "1A"));
-        add(new Slot(1.5, 3, "1B"));
+        add(new Slot(1.5, 3.2, "1B"));
         add(new Slot(1.6, 2.9, "1C"));
         add(new Slot(1.1, 2.7, "1D"));
         add(new Slot(1.4, 3.2, "1E"));
@@ -52,7 +52,7 @@ public class Slots {
         return method.park(car_width, car_depth);
     }
 
-    public ArrayList<Slot> GetAvailableSlots() {
+    public ArrayList<Slot> getAvailableSlots() {
         ArrayList<Slot> available = new ArrayList<Slot>();
         for (int i = 0; i < places.size(); i++) {
             //If the place is available add it to the available array.
