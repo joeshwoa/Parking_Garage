@@ -33,22 +33,16 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 --
 + sentInfo (String, String, int, double, double) : String
 + leave (int) : int
-+ check (int,int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>260</h></coordinates><panel_attributes>8: ParkingMang
++ check (int,int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>160</h></coordinates><panel_attributes>8: ParkingMang
 --
-- timeIn : DateTimeFormatter
-- timeOut : DateTimeFormatter
-- income : long [ ]
-- timeIncomeCom : DateTimeFormatter [ ]
-- incomeHistoryIter : long long
+- cumulativeIncome : long long
 - vehicleNumCom : int [ ]
-- timeVehicleNum : DateTimeFormatter [ ]
-- VehicleHestoryIter : long long
 - cars : vevhicleCard [ ]
 --
 + addCar(DateTimeFormatter) : void
 + removeCar(DateTimeFormatter) : void
 + addIncome (DateTimeFormatter) : void
-+ getIncome (DateTimeFormatter) : long
++ getIncome () : long
 + getNumOfVehicle () : int
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>390</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
 --

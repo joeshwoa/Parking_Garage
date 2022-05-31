@@ -13,15 +13,12 @@ public class MangerScreen {
     public void showMessagePopUp() {
     }
 
-    public void showIncomeButton(/*data time formatter*/) {
-        long inco;
-
-        inco = s.showIncome(/*data time formatter*/);
-
+    public void showIncomeButton(){
+        System.out.println("The total income till the current time = "+ s.showIncome());
     }
 
     public void showNumOfVehicleButton() {
-        System.out.println(s.showNumOfVehicle());
+        System.out.println("The number of vehicles that are currently in the garage = "+ s.showNumOfVehicle());
     }
 
     public void showAvalSlotsButton() {

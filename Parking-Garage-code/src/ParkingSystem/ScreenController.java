@@ -13,9 +13,8 @@ public class ScreenController {
     }
 
     public long showIncome() {
-        long income = 0;
-
-        return income;
+        ParkingMang p = new ParkingMang();
+        return p.getIncome();
     }
 
     public int showNumOfVehicle() {
