@@ -19,8 +19,8 @@ public class ScreenController {
     }
 
     public int showNumOfVehicle() {
-        int num = 0;
-        return num;
+        ParkingMang p = new ParkingMang();
+        return p.getNumOfVehicle();
     }
 
     public void showMassage() {

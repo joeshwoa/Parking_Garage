@@ -20,9 +20,8 @@ public class MangerScreen {
 
     }
 
-    public void showNumOfVehicleButton(/*data time formatter*/) {
-        int num = 0;
-        num = s.showNumOfVehicle();
+    public void showNumOfVehicleButton() {
+        System.out.println(s.showNumOfVehicle());
     }
 
     public void showAvalSlotsButton() {

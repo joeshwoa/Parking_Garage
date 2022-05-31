@@ -10,8 +10,8 @@ public class ParkingMang {
     private ArrayList<Long> inCome;
     private ArrayList<DateTimeFormatter> timeInCome, timeVechleNum;
     private BigInteger inComeHistoryLter;
-    private static ArrayList<VehicleCard> cars;
-    private int vehicleNumCom = 0;
+    private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
+    private static int vehicleNumCom = 0;
 
     ParkingMang() {
     }
@@ -19,9 +19,7 @@ public class ParkingMang {
         vehicleNumCom++;
         cars.add(vc);
     }
-    /*public void noMany(){
 
-    }*/
     /*public void removeCar(DateTimeFormatter time){
 
     }*/
@@ -34,5 +32,9 @@ public class ParkingMang {
     /*public void desForm(){
 
     }*/
+
+    public int getNumOfVehicle (){
+        return vehicleNumCom;
+    }
 
 }

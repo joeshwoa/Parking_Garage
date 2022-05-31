@@ -46,7 +46,6 @@ public class MachineController {
         }
         else
         {
-            //pm.NoManey();
             gm.ReturnMoney(money);
         }
     }*/

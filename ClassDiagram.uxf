@@ -49,7 +49,8 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 + removeCar(DateTimeFormatter) : void
 + addIncome (DateTimeFormatter) : void
 + getIncome (DateTimeFormatter) : long
-+ getNumOfVehicle (DateTimeFormatter) : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>390</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
++ getNumOfVehicle () : int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>390</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
 --
 - width : double
 - depth : double
