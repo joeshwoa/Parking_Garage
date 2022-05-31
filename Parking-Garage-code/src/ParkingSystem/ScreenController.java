@@ -27,7 +27,7 @@ public class ScreenController {
     public void showMassage() {
     }
 
-    public ArrayList<Slot> showAvalSlots() {
+    public ArrayList<Slot> showAvailSlots() {
         ArrayList<Slot> AvlSlots;
         AvlSlots = s.getAvailableSlots();
 

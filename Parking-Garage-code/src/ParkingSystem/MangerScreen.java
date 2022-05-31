@@ -26,7 +26,7 @@ public class MangerScreen {
     }
 
     public void showAvalSlotsButton() {
-        ArrayList<Slot> Aval = s.showAvalSlots();
+        ArrayList<Slot> Aval = s.showAvailSlots();
 
         for (int i = 0; i < Aval.size(); i++) {
             System.out.println(Aval.get(i).GetID());
