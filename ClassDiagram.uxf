@@ -16,36 +16,35 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 - minWid : double
 - minDep : double
 - palces : Slot [ ]
--single_instance : Slots
 --
 + parkIn (width : double, depth : double, method : ParkingMethod) : String
 + freeSlot (Id : String) : void
 + getAvailSlots () : Slot [ ]
-+ setSlotsDetails(width : double, depth : double, String i):boolean
++ setSlotsDetails(width : double, depth : double, String i):void
 + clearPlaces() : void
-+getInstance() : Slots
 
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
 --
 - money : int
 - parkCost : int
--s : Slots
+- s : Slots
 --
 + sentInfo (String, String, int, double, double) : String
 + leave (int) : int
-+ check (int,int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>260</h></coordinates><panel_attributes>8: ParkingMang
++ check (int,int) : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1920</x><y>390</y><w>350</w><h>260</h></coordinates><panel_attributes>8: ParkingMang
 --
 - timeIn : DateTimeFormatter
 - timeOut : DateTimeFormatter
 - income : long [ ]
 - timeIncomeCom : DateTimeFormatter [ ]
-- incomeHistoryIter : long long
+- incomeHestoryIter : long long
 - vehicleNumCom : int [ ]
 - timeVehicleNum : DateTimeFormatter [ ]
 - VehicleHestoryIter : long long
 - cars : vevhicleCard [ ]
 --
 + addCar(DateTimeFormatter) : void
++ noMoney() : void
 + removeCar(DateTimeFormatter) : void
 + addIncome (DateTimeFormatter) : void
 + getIncome (DateTimeFormatter) : long
@@ -64,7 +63,7 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
 --
--s : Slots
+- s : Slots
 --
 + showIncome (DateTimeFormatter) : long
 + showNumOfVehicle (DateTimeFormatter) : int
@@ -82,9 +81,9 @@ m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes
 m1=1
 m2=*</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>630</y><w>40</w><h>160</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1810</x><y>500</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=*
-m2=1</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>520</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
@@ -92,7 +91,7 @@ m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attribute
 m1=1
 m2=*</panel_attributes><additional_attributes>10;10;10;60;220;60;220;140</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>230</y><w>620</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1480</x><y>400</y><w>350</w><h>240</h></coordinates><panel_attributes>7: VehicleCard
+m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1470</x><y>400</y><w>350</w><h>240</h></coordinates><panel_attributes>7: VehicleCard
 --
 - model : String
 - carNum : String
@@ -126,4 +125,4 @@ m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additi
 Inheritance</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>800</y><w>520</w><h>40</h></coordinates><panel_attributes>lt=-
 </panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>810</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=-
 </panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>810</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=-
-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>370</y><w>120</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>100;10;10;10;10;120;100;120</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>340</y><w>360</w><h>550</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>340;30;340;10;20;10;10;530;70;530</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>310</y><w>650</w><h>710</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>470;60;470;10;20;10;10;690;510;690;510;560;630;560</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element></diagram>

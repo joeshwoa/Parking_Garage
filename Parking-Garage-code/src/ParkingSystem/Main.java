@@ -31,7 +31,7 @@ public class Main {
                         choice = 3;
                         return;
                     } else {
-                        System.out.println("Invalid choice");
+                        System.out.println("Invaild choice");
                         choice_fun = s.nextInt();
                     }
 
@@ -41,7 +41,7 @@ public class Main {
                     int choice_fun;
                     System.out.println("---Manager Mode---");
                     System.out.println("1. Set slots");
-                    System.out.println("2. Display available Slots");
+                    System.out.println("2. Display avaliable Slots");
                     System.out.println("3. Change Mode");
                     System.out.println("4. Exit");
                     choice_fun = s.nextInt();
@@ -56,14 +56,14 @@ public class Main {
                         choice = 3;
                         break;
                     } else {
-                        System.out.println("Invalid choice");
+                        System.out.println("Invaild choice");
                         choice_fun = s.nextInt();
                     }
                 }
             } else if (choice == 3) {
                 return;
             } else {
-                System.out.println("Invalid choice");
+                System.out.println("Invaild choice");
                 choice = s.nextInt();
             }
         }

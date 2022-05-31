@@ -2,16 +2,12 @@ package ParkingSystem;
 
 import java.util.ArrayList;
 
-class Slots {
+public class Slots {
     private static int numFreePlaces;
     private double maxWidth;
     private double maxDepth;
     private double minWidth;
     private double minDepth;
-
-    //To apply the singleton design pattern
-    private static Slots single_instance = null;
-
     //Initialize the Garage structure (the places of the garage)
     private static ArrayList<Slot> places = new ArrayList<Slot>() {{
         add(new Slot(1.1, 2.7, "1A"));
@@ -26,7 +22,7 @@ class Slots {
         add(new Slot(1.4, 3.2, "1G"));
     }};
 
-    private Slots() {
+    public Slots() {
         //the min width is 1 meter and max width is 1.7 meters
         minWidth = 1;
         maxWidth = 1.7;
@@ -40,25 +36,15 @@ class Slots {
         places.clear();
     }
 
-    public boolean setSlotsDetails(double w, double d, String Id) {
-        for (int i = 0; i < places.size(); i++) {
-            //search if there exists a slot with the same ID.
-            if ((places.get(i).GetID()).equals(Id)) {
-                return false;
-            }
-        }
-
+    public void setSlotsDetails(double w, double d, String Id) {
         //validate the width and depth sizes
         if(w > maxWidth || w < minWidth){
             System.out.println("Invalid width");
-            return false;
         }else if(d > maxDepth || d < minDepth){
             System.out.println("Invalid depth");
-            return false;
         }else{
             places.add(new Slot(w, d, Id));
         }
-        return true;
     }
 
     //It returns the first most suitable place to park-in
@@ -85,12 +71,5 @@ class Slots {
                 places.get(i).SetAval();
             }
         }
-    }
-
-    public static Slots getInstance() {
-        if (single_instance == null)
-            single_instance = new Slots();
-
-        return single_instance;
     }
 }

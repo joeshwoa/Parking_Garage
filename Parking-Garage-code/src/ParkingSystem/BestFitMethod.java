@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class BestFitMethod implements ParkingMethod {
+    Slots slots = new Slots();
     public String park(double car_width, double car_depth){
         String suitableId = "No";
         double min_suitable_width = 1000, min_suitable_depth = 1000;
         //To search in the available slots only
-        ArrayList<Slot> places = Slots.getInstance().getAvailableSlots();
+        ArrayList<Slot> places = slots.getAvailableSlots();
         for (int i = 0; i < places.size(); ++i) {
             //Check if the place dimensions greater or equal to the car dimensions.
             if (places.get(i).GetWidth() >= car_width && places.get(i).GetDepth() >= car_depth) {

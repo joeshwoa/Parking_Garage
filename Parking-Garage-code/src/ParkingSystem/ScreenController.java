@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScreenController {
+    private Slots s = new Slots();
 
     ScreenController() {
     }
@@ -28,13 +29,13 @@ public class ScreenController {
 
     public ArrayList<Slot> showAvailSlots() {
         ArrayList<Slot> AvlSlots;
-        AvlSlots = Slots.getInstance().getAvailableSlots();
+        AvlSlots = s.getAvailableSlots();
 
         return AvlSlots;
     }
 
     public void enterSlotsDetails() {
-        Slots.getInstance().clearPlaces();
+        s.clearPlaces();
         int num_of_slots;
         //Take from the manager the number of slots in the garage
         System.out.println("Enter Number of Slots");
@@ -48,12 +49,7 @@ public class ScreenController {
             width = scan.nextDouble();
             depth = scan.nextDouble();
             id = scan.nextLine();
-            boolean flag = Slots.getInstance().setSlotsDetails(width, depth, id);
-            if(!flag){
-                System.out.println("Can't add this Slot!");
-                //to not count this slot.
-                i--;
-            }
+            s.setSlotsDetails(width, depth, id);
         }
     }
 }
