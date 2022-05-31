@@ -9,7 +9,7 @@ public class MachineController {
     //private  double w,d;
 
     //private  GarageMachine gm = new GarageMachine();
-    // Slots s = new Slots ();
+    Slots s = Slots.getInstance();
     VehicleCard vc = new VehicleCard ();
     // ParkingMang pm = new ParkingMang();
     MachineController() {
@@ -17,7 +17,7 @@ public class MachineController {
     }
 
     public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
-        String sid = Slots.getInstance().parkIn(width, depth, method);
+        String sid = s.parkIn(width, depth, method);
         vc.createForm(model, carId, mYear, width, depth, sid);
         return sid;//sid
     }
