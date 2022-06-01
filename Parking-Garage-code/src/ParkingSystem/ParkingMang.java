@@ -44,6 +44,7 @@ public class ParkingMang {
     }
 
     public void removeCar(String slotId) {
+        //search for the target slot to remove it
         for (int i = 0; i < cars.size(); i++) {
             if (cars.get(i).getSlotId() == slotId) {
                 cars.remove(i);
@@ -54,6 +55,7 @@ public class ParkingMang {
         Slots slotsObj = Slots.getInstance();
         slotsObj.freeSlot(slotId);
     }
+    //to add on the cumulative income.
     public void addInCome(int income){
         cumulativeIncome+=income;
     }

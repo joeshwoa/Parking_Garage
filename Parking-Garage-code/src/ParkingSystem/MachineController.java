@@ -21,6 +21,7 @@ public class MachineController {
     }
     public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
         String sid = Slots.getInstance().parkIn(width, depth, method);
+        //To create form for the car's that will park-in onl
         if(sid == "No") vehicleCard.createForm(model, carId, mYear, width, depth, sid);
         return sid;//sid
     }
@@ -31,6 +32,7 @@ public class MachineController {
         ParkingMang.getInstance().addInCome(totalTime*5);
         return totalTime*5;//t*5
     }
+    //checks if the money is enough or no
     public boolean check(double money,int parkCost)
     {
         if(money>=parkCost)

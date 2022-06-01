@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class GarageMachine {
     public Scanner s;
 
+    //This function is to take the client's car's info
     public void enterInfoButton() {
         s = new Scanner(System.in);
         System.out.println("Enter model, carId, mYear, width and depth");
@@ -15,7 +16,8 @@ public class GarageMachine {
         System.out.println("First come first served enter FC || Best fit Method enter BF: ");
         pmethod = s.nextLine();
 
-        ParkingMethod method;
+        //To check which parking methos to use
+        ParkingMethod method; //used polymorphism in method to apply the suitable park function
         if(pmethod.equals("FC")){
             method = new FirstComeMethod();
         }else if(pmethod.equals("BF")){
@@ -61,6 +63,7 @@ public class GarageMachine {
         System.out.println("please enter "+cost+" egp to leave");
         System.out.println("Enter money");
         double money =s.nextDouble();
+        //while the money isn't enough repeate the process
         while(!MachineController.getInstance().check(money,cost)){
             System.out.println("please enter "+cost+" egp to leave");
             System.out.println("Enter money");

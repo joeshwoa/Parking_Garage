@@ -31,7 +31,6 @@ public class ScreenController {
     public ArrayList<Slot> showAvailSlots() {
         ArrayList<Slot> AvlSlots;
         AvlSlots = Slots.getInstance().getAvailableSlots();
-
         return AvlSlots;
     }
 
