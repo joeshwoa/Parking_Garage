@@ -3,7 +3,6 @@ package ParkingSystem;
 import java.util.ArrayList;
 
 class Slots {
-    private static int numFreePlaces;
     private double maxWidth;
     private double maxDepth;
     private double minWidth;

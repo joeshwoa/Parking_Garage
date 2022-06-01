@@ -10,7 +10,6 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 + returnChange (int) : void
 + returnMoney (int,String) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>370</y><w>410</w><h>240</h></coordinates><panel_attributes>5: Slots
 --
-- numFreePlaces : int
 - maxWid : double
 - maxDep : double
 - minWid : double
@@ -21,21 +20,22 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 + parkIn (width : double, depth : double, method : ParkingMethod) : String
 + freeSlot (Id : String) : void
 + getAvailSlots () : Slot [ ]
-+ setSlotsDetails(width : double, depth : double, String i):boolean
++ setSlotsDetails(width : double, depth : double, String id):boolean
 + clearPlaces() : void
 + getInstance() : Slots
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>300</w><h>240</h></coordinates><panel_attributes>2: MachineController
 --
-- money : int
-- parkCost : int
-- s : Slots
+- garage : GarageMachine
+- vehicleCard : VehicleCard
 - single_instance : MachineController
 --
 - MachineController () : 
-+ sentInfo (String, String, int, double, double) : String
-+ leave (int) : int
-+ check (int,int) : String
++ sentInfo ( model : String, carId : String,  
+mYear : int, width : double, depth : double, 
+method : ParkingMethod) : String
++ leave (slotId : String) : int
++ check (money : double,parkCost : int) : boolean
 + getInstance () :  MachineController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>220</h></coordinates><panel_attributes>8: ParkingMang
 --
 - cumulativeIncome : long long
@@ -44,11 +44,11 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 - single_instance : ParkingMang
 --
 - ParkingMang () : 
-+ parkout () : 
-+ addCar(DateTimeFormatter) : void
-+ removeCar(DateTimeFormatter) : void
-+ addIncome (DateTimeFormatter) : void
-+ getIncome () : long
++ parkout (slotId : String ) : Duration
++ addCar(vc : VehicleCard) : void
++ removeCar(slotId : String) : void
++ addIncome (income : int) : void
++ getIncome () : int
 + getNumOfVehicle () : int
 + getInstance () : ParkingMang
 
@@ -59,6 +59,8 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 - slotId : String
 - available : bool
 --
++Slot(w : double, d : double, Id : String)
++setAvail(): void
 + getWid () :  double
 + getDep () :  double
 + getId () : String
@@ -67,39 +69,36 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
 --
-- s : Slots
 - single_instance : ScreenController
 --
 - ScreenController () : 
-+ showIncome (DateTimeFormatter) : long
-+ showNumOfVehicle (DateTimeFormatter) : int
-+ showAvalSlots () : Slot [ ]
-+ showMassage () : void
++ showIncome () : int
++ showNumOfVehicle () : int
++ showAvailSlots () : Slot [ ]
 + enterSlotsDetails():void
 + getInstance () :  ScreenController
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>3: MangerScreen
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>860</x><y>0</y><w>350</w><h>190</h></coordinates><panel_attributes>3: MangerScreen
 --
 
 --
-+ showMassagePupUp () : void
-+ showIncomeButton (DateTimeFormatter) :void
-+ showNumOfVehicleButton(DateTimeFormatter) : void
-+ showAvalSlotsButton () : void
++ showIncomeButton () :void
++ showNumOfVehicleButton() : void
++ showAvailSlotsButton () : void
 + enterSlotsDetailsButton():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>494</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=*</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=*</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>134</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>600</y><w>40</w><h>190</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>600</y><w>40</w><h>190</h></coordinates><panel_attributes>lt=-
 m1=*
-m2=1</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>130</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>520</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>520</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>230</y><w>240</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=*</panel_attributes><additional_attributes>10;10;10;60;220;60;220;140</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>230</y><w>620</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1480</x><y>400</y><w>350</w><h>210</h></coordinates><panel_attributes>7: VehicleCard
+m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1480</x><y>400</y><w>570</w><h>210</h></coordinates><panel_attributes>7: VehicleCard
 --
 - model : String
 - carNum : String
@@ -107,10 +106,11 @@ m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additi
 - width : double
 - depth : double
 - slotId : String
+- parkCost : int
 - timeIn : LocalDateTime
 - timeOut : LocalDateTime
 --
-+ createForm (String, String, int, double, double, String) : void
++ createForm (model : String, num : String, year : int, width : double, depth : double, slotID : String) : void
 + getSlotID() : String
 + getTimeIn() :  LocalDateTime</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>690</y><w>260</w><h>90</h></coordinates><panel_attributes>9: ParkingMethod
 --

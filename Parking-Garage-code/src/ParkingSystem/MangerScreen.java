@@ -4,25 +4,20 @@ package ParkingSystem;
 import java.util.ArrayList;
 
 public class MangerScreen {
-    ScreenController s = ScreenController.getInstance();
-
     MangerScreen() {
 
     }
 
-    public void showMessagePopUp() {
-    }
-
     public void showIncomeButton(){
-        System.out.println("The total income till the current time = "+ s.showIncome());
+        System.out.println("The total income till the current time = "+ ScreenController.getInstance().showIncome());
     }
 
     public void showNumOfVehicleButton() {
-        System.out.println("The number of vehicles that are currently in the garage = "+ s.showNumOfVehicle());
+        System.out.println("The number of vehicles that are currently in the garage = "+ ScreenController.getInstance().showNumOfVehicle());
     }
 
     public void showAvalSlotsButton() {
-        ArrayList<Slot> Aval = s.showAvailSlots();
+        ArrayList<Slot> Aval = ScreenController.getInstance().showAvailSlots();
 
         for (int i = 0; i < Aval.size(); i++) {
             System.out.println(Aval.get(i).GetID());
@@ -35,6 +30,6 @@ public class MangerScreen {
     }
 
     public void enterSlotsDetailsButton() {
-        s.enterSlotsDetails();
+        ScreenController.getInstance().enterSlotsDetails();
     }
 }

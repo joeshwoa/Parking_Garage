@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class ParkingMang {
-    private static ParkingMang pm = null;
+    private static ParkingMang single_instance = null;
     private static int cumulativeIncome = 0;
     private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
     private static int vehicleNumCom = 0;
@@ -23,9 +23,9 @@ public class ParkingMang {
 
     public static ParkingMang getInstance()
     {
-        if(pm==null)
-            pm= new ParkingMang();
-        return pm;
+        if(single_instance == null)
+            single_instance = new ParkingMang();
+        return single_instance;
     }
     public Duration  parkOut(String slotId) {
         Instant  timeOut = Instant .now();
@@ -54,7 +54,7 @@ public class ParkingMang {
         Slots slotsObj = Slots.getInstance();
         slotsObj.freeSlot(slotId);
     }
-    public void addInCome(long income){
+    public void addInCome(int income){
         cumulativeIncome+=income;
     }
     public int getIncome(){

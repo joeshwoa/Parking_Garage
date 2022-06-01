@@ -12,8 +12,6 @@ public class VehicleCard {
     private double width, depth;
     private Instant  timeIn, timeOut;
 
-    private ParkingMang parkingManager = ParkingMang.getInstance();
-
     VehicleCard() {
     }
 
@@ -26,7 +24,7 @@ public class VehicleCard {
         this.slotId = slotID;
         Instant  timeNow = Instant.now();
         this.timeIn = timeNow;
-        parkingManager.addCar(this);
+        ParkingMang.getInstance().addCar(this);
     }
     public String getSlotId(){return slotId;}
     public Instant getTimeIn(){return timeIn;}

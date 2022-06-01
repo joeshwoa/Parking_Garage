@@ -8,17 +8,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScreenController {
-    private static ScreenController sc=null;
+    private static ScreenController sigle_instance =null;
 
     private ScreenController() {
     }
     public static ScreenController getInstance()
     {
-        if(sc==null)
-            sc= new ScreenController();
-        return sc;
+        if(sigle_instance == null)
+            sigle_instance = new ScreenController();
+        return sigle_instance;
     }
-    public long showIncome() {
+    public int showIncome() {
         ParkingMang p = ParkingMang.getInstance();
         return p.getIncome();
     }
@@ -26,9 +26,6 @@ public class ScreenController {
     public int showNumOfVehicle() {
         ParkingMang p = ParkingMang.getInstance();
         return p.getNumOfVehicle();
-    }
-
-    public void showMassage() {
     }
 
     public ArrayList<Slot> showAvailSlots() {
