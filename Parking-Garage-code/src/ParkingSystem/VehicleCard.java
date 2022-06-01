@@ -28,6 +28,7 @@ public class VehicleCard {
         this.timeIn = timeNow;
         parkingManager.addCar(this);
     }
+    public String getSlotId(){return slotId;}
     /*public DateTimeFormatter Parkout(){
 
     }*/

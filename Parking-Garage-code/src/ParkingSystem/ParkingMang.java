@@ -25,9 +25,23 @@ public class ParkingMang {
             PM= new ParkingMang();
         return PM;
     }
-    /*public void removeCar(DateTimeFormatter time){
+    public void/*LocalDateTime*/ parkOut(String slotId) {
+        //LocalDateTime now = ;
+        removeCar(slotId);
+        return ;
+    }
 
-    }*/
+    public void removeCar(String slotId) {
+        for (int i = 0; i < cars.size(); i++) {
+            if (cars.get(i).getSlotId() == slotId) {
+                cars.remove(i);
+                break;
+            }
+
+        }
+        Slots slotsObj = Slots.getInstance();
+        slotsObj.freeSlot(slotId);
+    }
     /*public void addInCome(DateTimeFormatter time){
 
     }*/

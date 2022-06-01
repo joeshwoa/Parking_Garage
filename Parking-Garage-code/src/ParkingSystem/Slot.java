@@ -29,6 +29,7 @@ public class Slot {
     public String GetID() {
         return SlotId;
     }
+    //public String getSlotId(){return SlotId;}
 
     public boolean IfAvail() {
         return Available;

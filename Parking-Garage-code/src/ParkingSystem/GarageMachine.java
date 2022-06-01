@@ -47,28 +47,31 @@ public class GarageMachine {
         }
 
     }
-    /*public void LeaveButton ()
+    public void leaveButton ()
     {
+        // take id of slot from client
         s = new Scanner(System.in);
         String sid;
         System.out.println("Enter your slot Id");
         sid=s.nextLine();
-        int p=c.Leave(sid);
-        pay(p,sid);
-    }*/
-    /*private void pay (int cost,String slotId)
+        control.leave(sid);
+        //int p=c.Leave(sid);
+        //pay(p,sid);
+    }
+    private void pay (int cost)
     {
         System.out.println("please enter "+cost+" egp to leave");
         System.out.println("Enter money");
-        int m=s.nextInt();
-        System.out.println(c.check(m,cost,slotId));
-    }*/
-    /*public void  ReturnChange (int ch)
+        double money =s.nextDouble();
+        control.check(money,cost);
+    }
+    public void  returnChange (double change)
     {
-        System.out.println("tack "+ch);
-    }*/
-    /*public void  ReturnMoney (int m)
+        System.out.println("tack "+change);
+        System.out.println("thank you for use our garage :)");
+    }
+    public void  returnMoney (double money)
     {
-        System.out.println("tack "+m+" your money");
-    }*/
+        System.out.println("tack "+money+" your money and manger will come for you");
+    }
 }

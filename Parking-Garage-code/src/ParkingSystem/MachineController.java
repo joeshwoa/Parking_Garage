@@ -8,6 +8,9 @@ public class MachineController {
     //private  int y;
     //private  double w,d;
     private static MachineController MC;
+    private  ParkingMang manage = ParkingMang.getInstance();
+    private GarageMachine grage = new GarageMachine();
+
 
     //private  GarageMachine gm = new GarageMachine();
     VehicleCard vc = new VehicleCard ();
@@ -26,35 +29,33 @@ public class MachineController {
         vc.createForm(model, carId, mYear, width, depth, sid);
         return sid;//sid
     }
-    /*public int Leave (String soltId)
+    public int leave (String slotId)
     {
+
         LocalDateTime timNow = LocalDateTime.now();
         DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = timNow.format(formatTime);
-        //LocalDateTime t =s.FreeSlot (width,depth);
-        //t=HH;
-        //if(mm!=0)t++;
+        manage.parkOut(slotId);
+        // return times
+        // calculate fees
         return 0;//t*5
-    }*/
-    /*public String check(int money,int parkCost,String slotId)
+    }
+    public void check(double money,int parkCost)
     {
         if(money>=parkCost)
         {
-            //vc.DesForm(slotId);
             if (money>parkCost)
             {
-                gm.ReturnChange(money-parkCost);
-                return "Thank you for use our garage :)";
+                grage.returnChange(money-parkCost);
             }
             if (money==parkCost)
             {
-                return "Thank you for use our garage :)";
+                System.out.println("thank you for use our garage :)");
             }
         }
         else
         {
-            gm.ReturnMoney(money);
-            return "Manger will come for you";
+            grage.returnMoney(money);
         }
-    }*/
+    }
 }
