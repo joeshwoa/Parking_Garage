@@ -3,7 +3,7 @@ package ParkingSystem;
 import java.util.Scanner;
 
 public class GarageMachine {
-    private MachineController control = new MachineController();
+    private MachineController control = MachineController.getInstance();
     public Scanner s;
 
     public void enterInfoButton() {
