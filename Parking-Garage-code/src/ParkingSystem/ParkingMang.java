@@ -61,7 +61,6 @@ public class ParkingMang {
         return cumulativeIncome;
     }
 
-
     public int getNumOfVehicle (){
         return vehicleNumCom;
     }
