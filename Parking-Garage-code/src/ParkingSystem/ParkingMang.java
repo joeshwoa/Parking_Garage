@@ -6,17 +6,25 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ParkingMang {
+    private static ParkingMang PM;
     private static Long cumulativeIncome;
     private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
     private static int vehicleNumCom = 0;
 
-    ParkingMang() {
+    private ParkingMang() {
     }
+
     public void addCar(VehicleCard vc){
         vehicleNumCom++;
         cars.add(vc);
     }
 
+    public static ParkingMang getInstance()
+    {
+        if(PM==null)
+            PM= new ParkingMang();
+        return PM;
+    }
     /*public void removeCar(DateTimeFormatter time){
 
     }*/

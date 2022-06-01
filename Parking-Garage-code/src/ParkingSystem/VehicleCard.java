@@ -9,7 +9,7 @@ public class VehicleCard {
     private double width, depth;
     private LocalDateTime timeIn, timeOut;
 
-    private ParkingMang parkingManager = new ParkingMang();
+    private ParkingMang parkingManager = ParkingMang.getInstance();
 
     VehicleCard() {
     }

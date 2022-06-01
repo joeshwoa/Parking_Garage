@@ -13,12 +13,12 @@ public class ScreenController {
     }
 
     public long showIncome() {
-        ParkingMang p = new ParkingMang();
+        ParkingMang p = ParkingMang.getInstance();
         return p.getIncome();
     }
 
     public int showNumOfVehicle() {
-        ParkingMang p = new ParkingMang();
+        ParkingMang p = ParkingMang.getInstance();
         return p.getNumOfVehicle();
     }
 
