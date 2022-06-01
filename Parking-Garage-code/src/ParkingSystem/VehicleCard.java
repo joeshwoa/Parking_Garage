@@ -8,7 +8,7 @@ import java.time.Instant;
 
 public class VehicleCard {
     private String model, carNum, slotId;
-    private int mYear, parckCost;
+    private int mYear, parkCost;
     private double width, depth;
     private Instant  timeIn, timeOut;
 
@@ -25,9 +25,6 @@ public class VehicleCard {
         this.depth = depth;
         this.slotId = slotID;
         Instant  timeNow = Instant.now();
-        //to format time
-        /*DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formattedDate = timNow.format(formatTime);*/
         this.timeIn = timeNow;
         parkingManager.addCar(this);
     }

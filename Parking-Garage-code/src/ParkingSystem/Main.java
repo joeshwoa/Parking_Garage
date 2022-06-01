@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("---Manager Mode---");
                     System.out.println("1. Set slots");
                     System.out.println("2. Display available Slots");
-                    System.out.println("3. Show number of vehicles");
+                    System.out.println("3. Show Total number of vehicles (From the beginning of the execution)");
                     System.out.println("4. Show Income");
                     System.out.println("5. Change Mode");
                     System.out.println("6. Exit");

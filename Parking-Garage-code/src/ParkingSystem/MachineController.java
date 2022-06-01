@@ -7,29 +7,23 @@ import java.time.Instant;
 
 
 public class MachineController {
-    //private  String m,cid;
-    //private  int y;
-    //private  double w,d;
-    private static MachineController mc =null;
+    private static MachineController mc = null;
     private  ParkingMang manage = ParkingMang.getInstance();
     private GarageMachine grage = new GarageMachine();
 
-
-    //private  GarageMachine gm = new GarageMachine();
     VehicleCard vc = new VehicleCard ();
-    // ParkingMang pm = new ParkingMang();
     private MachineController() {
 
     }
     public static MachineController getInstance()
     {
-        if(mc==null)
-            mc= new MachineController();
+        if(mc == null)
+            mc = new MachineController();
         return mc;
     }
     public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
         String sid = Slots.getInstance().parkIn(width, depth, method);
-        vc.createForm(model, carId, mYear, width, depth, sid);
+        if(sid == "No") vc.createForm(model, carId, mYear, width, depth, sid);
         return sid;//sid
     }
     public int leave (String slotId)
@@ -40,13 +34,7 @@ public class MachineController {
         String formattedDate = timNow.format(formatTime);
         Duration time =manage.parkOut(slotId);
         double total = (double) time.toHours();
-        int totalTime ;
-        if(total != (int)total){
-            totalTime = (int)total+1;
-        }
-        else{
-            totalTime= (int)total;
-        }
+        int totalTime = (int) total + 1;
         manage.addInCome(totalTime*5);
         return totalTime*5;//t*5
     }

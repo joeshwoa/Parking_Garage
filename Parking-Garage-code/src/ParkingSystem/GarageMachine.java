@@ -3,7 +3,6 @@ package ParkingSystem;
 import java.util.Scanner;
 
 public class GarageMachine {
-    private MachineController control = MachineController.getInstance();
     public Scanner s;
 
     public void enterInfoButton() {
@@ -38,10 +37,11 @@ public class GarageMachine {
         System.out.println("Enter depth");
         d = s.nextDouble();
 
-        String sid = control.sentInfo(m, cid, y, w, d, method);
+        String sid = MachineController.getInstance().sentInfo(m, cid, y, w, d, method);
         if (sid == "No") {
             System.out.println("Sorry No Avaliable Slot");
         } else {
+
             System.out.println("Your slot Id = " + sid);
 
         }
@@ -54,7 +54,7 @@ public class GarageMachine {
         String sid;
         System.out.println("Enter your slot Id");
         sid=s.nextLine();
-        int fees = control.leave(sid);
+        int fees = MachineController.getInstance().leave(sid);
         //int p=c.Leave(sid);
         pay(fees);
     }
@@ -63,8 +63,10 @@ public class GarageMachine {
         System.out.println("please enter "+cost+" egp to leave");
         System.out.println("Enter money");
         double money =s.nextDouble();
-        while (!control.check(money,cost)){
-
+        while(!MachineController.getInstance().check(money,cost)){
+            System.out.println("please enter "+cost+" egp to leave");
+            System.out.println("Enter money");
+            money =s.nextDouble();
         }
     }
     public void  returnChange (double change)

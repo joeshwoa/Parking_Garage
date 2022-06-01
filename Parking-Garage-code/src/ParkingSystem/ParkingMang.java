@@ -8,8 +8,8 @@ import java.time.Duration;
 import java.time.Instant;
 
 public class ParkingMang {
-    private static ParkingMang pm=null;
-    private static Long cumulativeIncome;
+    private static ParkingMang pm = null;
+    private static int cumulativeIncome = 0;
     private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
     private static int vehicleNumCom = 0;
 
@@ -57,7 +57,7 @@ public class ParkingMang {
     public void addInCome(long income){
         cumulativeIncome+=income;
     }
-    public Long getIncome(){
+    public int getIncome(){
         return cumulativeIncome;
     }
 
