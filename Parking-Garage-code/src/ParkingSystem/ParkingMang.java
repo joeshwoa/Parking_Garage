@@ -4,9 +4,11 @@ import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.time.Duration;
+import java.time.Instant;
 
 public class ParkingMang {
-    private static ParkingMang pm;
+    private static ParkingMang pm=null;
     private static Long cumulativeIncome;
     private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
     private static int vehicleNumCom = 0;
@@ -25,10 +27,20 @@ public class ParkingMang {
             pm= new ParkingMang();
         return pm;
     }
-    public void/*LocalDateTime*/ parkOut(String slotId) {
-        //LocalDateTime now = ;
+    public Duration  parkOut(String slotId) {
+        Instant  timeOut = Instant .now();
+        int temp=0;//index of car
+        for(int i=0;i<cars.size();i++){
+            if(cars.get(i).getSlotId()==slotId){
+                temp =i;
+                break;
+            }
+        }
+        Instant timeIn = cars.get(temp).getTimeIn();
+        Duration time = Duration.between(timeIn,timeOut);
         removeCar(slotId);
-        return ;
+        time.toHours();
+        return time;
     }
 
     public void removeCar(String slotId) {
@@ -42,15 +54,13 @@ public class ParkingMang {
         Slots slotsObj = Slots.getInstance();
         slotsObj.freeSlot(slotId);
     }
-    /*public void addInCome(DateTimeFormatter time){
-
-    }*/
+    public void addInCome(long income){
+        cumulativeIncome+=income;
+    }
     public Long getIncome(){
         return cumulativeIncome;
     }
-    /*public void desForm(){
 
-    }*/
 
     public int getNumOfVehicle (){
         return vehicleNumCom;

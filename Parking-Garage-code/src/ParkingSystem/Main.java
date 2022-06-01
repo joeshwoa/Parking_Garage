@@ -19,15 +19,19 @@ public class Main {
                     int choice_fun;
                     System.out.println("---Driver Mode---");
                     System.out.println("1. Park in");
-                    System.out.println("2. Change Mode");
-                    System.out.println("3. Exit");
+                    System.out.println("2. Park Out");
+                    System.out.println("3. Change Mode");
+                    System.out.println("4. Exit");
                     choice_fun = s.nextInt();
                     if (choice_fun == 1) {
                         garage.enterInfoButton();
-                    } else if (choice_fun == 2) {
+                    }else if (choice_fun==2){
+                        garage.leaveButton();
+                    }
+                    else if (choice_fun == 3) {
                         choice = 2;
                         break;
-                    } else if (choice_fun == 3) {
+                    } else if (choice_fun == 4) {
                         choice = 3;
                         return;
                     } else {

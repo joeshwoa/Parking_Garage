@@ -54,16 +54,18 @@ public class GarageMachine {
         String sid;
         System.out.println("Enter your slot Id");
         sid=s.nextLine();
-        control.leave(sid);
+        int fees = control.leave(sid);
         //int p=c.Leave(sid);
-        //pay(p,sid);
+        pay(fees);
     }
     private void pay (int cost)
     {
         System.out.println("please enter "+cost+" egp to leave");
         System.out.println("Enter money");
         double money =s.nextDouble();
-        control.check(money,cost);
+        while (!control.check(money,cost)){
+
+        }
     }
     public void  returnChange (double change)
     {
@@ -72,6 +74,6 @@ public class GarageMachine {
     }
     public void  returnMoney (double money)
     {
-        System.out.println("tack "+money+" your money and manger will come for you");
+        System.out.println("Not Enough Money.. Please Enter the requested Money");
     }
 }

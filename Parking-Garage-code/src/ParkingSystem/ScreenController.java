@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScreenController {
-    private static ScreenController sc;
+    private static ScreenController sc=null;
 
     private ScreenController() {
     }

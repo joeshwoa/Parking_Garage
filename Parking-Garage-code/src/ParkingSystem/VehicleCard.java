@@ -2,12 +2,15 @@ package ParkingSystem;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+import java.time.Instant;
+
 
 public class VehicleCard {
     private String model, carNum, slotId;
     private int mYear, parckCost;
     private double width, depth;
-    private LocalDateTime timeIn, timeOut;
+    private Instant  timeIn, timeOut;
 
     private ParkingMang parkingManager = ParkingMang.getInstance();
 
@@ -21,7 +24,7 @@ public class VehicleCard {
         this.width = width;
         this.depth = depth;
         this.slotId = slotID;
-        LocalDateTime timeNow = LocalDateTime.now();
+        Instant  timeNow = Instant.now();
         //to format time
         /*DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = timNow.format(formatTime);*/
@@ -29,8 +32,6 @@ public class VehicleCard {
         parkingManager.addCar(this);
     }
     public String getSlotId(){return slotId;}
-    /*public DateTimeFormatter Parkout(){
-
-    }*/
+    public Instant getTimeIn(){return timeIn;}
 
 }
