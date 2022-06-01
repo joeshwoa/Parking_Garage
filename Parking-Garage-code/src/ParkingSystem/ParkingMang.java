@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class ParkingMang {
-    private static ParkingMang PM;
+    private static ParkingMang pm;
     private static Long cumulativeIncome;
     private static ArrayList<VehicleCard> cars = new ArrayList<VehicleCard>();
     private static int vehicleNumCom = 0;
@@ -21,9 +21,9 @@ public class ParkingMang {
 
     public static ParkingMang getInstance()
     {
-        if(PM==null)
-            PM= new ParkingMang();
-        return PM;
+        if(pm==null)
+            pm= new ParkingMang();
+        return pm;
     }
     public void/*LocalDateTime*/ parkOut(String slotId) {
         //LocalDateTime now = ;

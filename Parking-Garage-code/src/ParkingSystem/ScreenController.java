@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ScreenController {
-    private static ScreenController SC;
+    private static ScreenController sc;
 
     private ScreenController() {
     }
     public static ScreenController getInstance()
     {
-        if(SC==null)
-            SC= new ScreenController();
-        return SC;
+        if(sc==null)
+            sc= new ScreenController();
+        return sc;
     }
     public long showIncome() {
         ParkingMang p = ParkingMang.getInstance();

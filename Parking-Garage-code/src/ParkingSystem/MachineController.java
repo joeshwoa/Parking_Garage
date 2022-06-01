@@ -7,7 +7,7 @@ public class MachineController {
     //private  String m,cid;
     //private  int y;
     //private  double w,d;
-    private static MachineController MC;
+    private static MachineController mc;
     private  ParkingMang manage = ParkingMang.getInstance();
     private GarageMachine grage = new GarageMachine();
 
@@ -20,9 +20,9 @@ public class MachineController {
     }
     public static MachineController getInstance()
     {
-        if(MC==null)
-            MC= new MachineController();
-        return MC;
+        if(mc==null)
+            mc= new MachineController();
+        return mc;
     }
     public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
         String sid = Slots.getInstance().parkIn(width, depth, method);

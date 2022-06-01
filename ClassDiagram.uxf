@@ -30,20 +30,27 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 - money : int
 - parkCost : int
 - s : Slots
+- mc : MachineController
 --
+- MachineController () : 
 + sentInfo (String, String, int, double, double) : String
 + leave (int) : int
-+ check (int,int) : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>160</h></coordinates><panel_attributes>8: ParkingMang
++ check (int,int) : String
++ getInstance () :  MachineController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>200</h></coordinates><panel_attributes>8: ParkingMang
 --
 - cumulativeIncome : long long
 - vehicleNumCom : int [ ]
 - cars : vevhicleCard [ ]
+- pm : ParkingMang
 --
+- ParkingMang () : 
 + addCar(DateTimeFormatter) : void
 + removeCar(DateTimeFormatter) : void
 + addIncome (DateTimeFormatter) : void
 + getIncome () : long
 + getNumOfVehicle () : int
++ getInstance () : ParkingMang
+
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>390</y><w>350</w><h>240</h></coordinates><panel_attributes>6: Slot
 --
 - width : double
@@ -60,12 +67,16 @@ m1=1
 m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
 --
 - s : Slots
+- sc : ScreenController
 --
+- ScreenController () : 
 + showIncome (DateTimeFormatter) : long
 + showNumOfVehicle (DateTimeFormatter) : int
 + showAvalSlots () : Slot [ ]
 + showMassage () : void
-+ enterSlotsDetails():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>3: MangerScreen
++ enterSlotsDetails():void
++ getInstance () :  ScreenController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>880</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>3: MangerScreen
 --
 
 --
