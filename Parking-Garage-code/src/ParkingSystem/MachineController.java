@@ -11,11 +11,10 @@ public class MachineController {
     private GarageMachine garage = new GarageMachine();
 
     VehicleCard vehicleCard = new VehicleCard ();
-    private MachineController() {
+    private MachineController(){
 
     }
-    public static MachineController getInstance()
-    {
+    public static MachineController getInstance() {
         if(single_instance == null)
             single_instance = new MachineController();
         return single_instance;
