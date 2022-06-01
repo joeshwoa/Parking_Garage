@@ -47,15 +47,13 @@ public class GarageMachine {
         }
 
     }
-    public void leaveButton ()
-    {
+    public void leaveButton () {
         // take id of slot from client
         s = new Scanner(System.in);
         String sid;
         System.out.println("Enter your slot Id");
-        sid=s.nextLine();
+        sid = s.nextLine();
         int fees = MachineController.getInstance().leave(sid);
-        //int p=c.Leave(sid);
         pay(fees);
     }
     private void pay (int cost)
