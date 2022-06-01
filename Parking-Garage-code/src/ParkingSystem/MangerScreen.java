@@ -4,7 +4,7 @@ package ParkingSystem;
 import java.util.ArrayList;
 
 public class MangerScreen {
-    ScreenController s = new ScreenController();
+    ScreenController s = ScreenController.getInstance();
 
     MangerScreen() {
 
