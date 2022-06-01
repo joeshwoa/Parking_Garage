@@ -30,7 +30,7 @@ public class MachineController {
         //if(mm!=0)t++;
         return 0;//t*5
     }*/
-    /*public void check(int money,int parkCost,String slotId)
+    /*public String check(int money,int parkCost,String slotId)
     {
         if(money>=parkCost)
         {
@@ -38,15 +38,17 @@ public class MachineController {
             if (money>parkCost)
             {
                 gm.ReturnChange(money-parkCost);
+                return "Thank you for use our garage :)";
             }
             if (money==parkCost)
             {
-                System.out.println("thank you for use our garage :)");
+                return "Thank you for use our garage :)";
             }
         }
         else
         {
             gm.ReturnMoney(money);
+            return "Manger will come for you";
         }
     }*/
 }

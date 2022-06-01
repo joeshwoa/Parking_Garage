@@ -6,7 +6,7 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 --
 + enterInfoButton () : void
 + leaveButton () : void
-- pay (int) : void
+-  pay (int) : void
 + returnChange (int) : void
 + returnMoney (int,String) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>370</y><w>410</w><h>240</h></coordinates><panel_attributes>5: Slots
 --
@@ -16,24 +16,24 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 - minWid : double
 - minDep : double
 - palces : Slot [ ]
--single_instance : Slots
+- single_instance : Slots
 --
 + parkIn (width : double, depth : double, method : ParkingMethod) : String
 + freeSlot (Id : String) : void
 + getAvailSlots () : Slot [ ]
 + setSlotsDetails(width : double, depth : double, String i):boolean
 + clearPlaces() : void
-+getInstance() : Slots
++ getInstance() : Slots
 
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>2: MachineController
 --
 - money : int
 - parkCost : int
--s : Slots
+- s : Slots
 --
 + sentInfo (String, String, int, double, double) : String
 + leave (int) : int
-+ check (int,int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>160</h></coordinates><panel_attributes>8: ParkingMang
++ check (int,int) : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1490</x><y>770</y><w>350</w><h>160</h></coordinates><panel_attributes>8: ParkingMang
 --
 - cumulativeIncome : long long
 - vehicleNumCom : int [ ]
@@ -59,7 +59,7 @@ m2=1&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;110;10&lt;/addit
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>0</y><w>350</w><h>240</h></coordinates><panel_attributes>4: ScreenController
 --
--s : Slots
+- s : Slots
 --
 + showIncome (DateTimeFormatter) : long
 + showNumOfVehicle (DateTimeFormatter) : int
@@ -73,17 +73,17 @@ m2=1</panel_attributes><additional_attributes>10;10;10;10</additional_attributes
 + showIncomeButton (DateTimeFormatter) :void
 + showNumOfVehicleButton(DateTimeFormatter) : void
 + showAvalSlotsButton () : void
-+ enterSlotsDetailsButton():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>494</y><w>90</w><h>40</h></coordinates><panel_attributes>lt=-
++ enterSlotsDetailsButton():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>494</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=*</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=*</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1220</x><y>134</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>630</y><w>40</w><h>160</h></coordinates><panel_attributes>lt=-
 m1=*
 m2=1</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>130</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>520</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>520</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>230</y><w>240</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>230</y><w>240</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=*</panel_attributes><additional_attributes>10;10;10;60;220;60;220;140</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>230</y><w>620</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -105,19 +105,17 @@ m2=*</panel_attributes><additional_attributes>590;10;590;60;10;60;10;140</additi
 --
 
 --
-+park(width : double, depth : double): String
++ park(width : double, depth : double): String
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>600</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=-
 </panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>860</y><w>260</w><h>120</h></coordinates><panel_attributes>10: FirstComeMethod
 --
 
 --
-
-+park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>860</y><w>260</w><h>120</h></coordinates><panel_attributes>11: BestFitMethod
++ park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>790</x><y>860</y><w>260</w><h>120</h></coordinates><panel_attributes>11: BestFitMethod
 --
 
 --
-
-+park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>641</x><y>770</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-
++ park(width : double, depth : double): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>641</x><y>770</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-
 Inheritance</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>800</y><w>520</w><h>40</h></coordinates><panel_attributes>lt=-
 </panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>810</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=-
 </panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>910</x><y>810</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=-

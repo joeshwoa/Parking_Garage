@@ -61,15 +61,14 @@ public class GarageMachine {
         System.out.println("please enter "+cost+" egp to leave");
         System.out.println("Enter money");
         int m=s.nextInt();
-        c.check(m,cost,slotId);
+        System.out.println(c.check(m,cost,slotId));
     }*/
     /*public void  ReturnChange (int ch)
     {
         System.out.println("tack "+ch);
-        System.out.println("thank you for use our garage :)");
     }*/
     /*public void  ReturnMoney (int m)
     {
-        System.out.println("tack "+m+" your money and manger will come for you");
+        System.out.println("tack "+m+" your money");
     }*/
 }
