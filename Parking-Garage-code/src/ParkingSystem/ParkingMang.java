@@ -56,7 +56,7 @@ public class ParkingMang {
         slotsObj.freeSlot(slotId);
     }
     //to add on the cumulative income.
-    public void addInCome(int income){
+    public void addIncome(int income){
         cumulativeIncome+=income;
     }
     public int getIncome(){

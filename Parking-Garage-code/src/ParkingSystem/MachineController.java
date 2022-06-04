@@ -22,14 +22,14 @@ public class MachineController {
     public String sentInfo(String model, String carId, int mYear, double width, double depth, ParkingMethod method) {
         String sid = Slots.getInstance().parkIn(width, depth, method);
         //To create form for the car's that will park-in onl
-        if(sid == "No") vehicleCard.createForm(model, carId, mYear, width, depth, sid);
+        if(sid != "No") vehicleCard.createForm(model, carId, mYear, width, depth, sid);
         return sid;//sid
     }
     public int leave (String slotId) {
         Duration time = ParkingMang.getInstance().parkOut(slotId);
         double total = (double) time.toHours();
         int totalTime = (int) total + 1;
-        ParkingMang.getInstance().addInCome(totalTime*5);
+        ParkingMang.getInstance().addIncome(totalTime*5);
         return totalTime*5;//t*5
     }
     //checks if the money is enough or no
