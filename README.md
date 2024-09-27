@@ -1,3 +1,6 @@
+<img src="https://skillicons.dev/icons?i=java" />
+<br>
+
 # Parking Garage application Project
 
 Our Project for the Introduction to Software Engineering course taken during fall 2022 semester.</br>
